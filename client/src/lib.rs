@@ -8,12 +8,12 @@
 // If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
 //
 
-//! # Rust Client for Bitcoin Core API
+//! # Rust Client for Peercoin API
 //!
-//! This is a client library for the Bitcoin Core JSON-RPC API.
+//! This is a client library for the Peercoin JSON-RPC API.
 //!
 
-#![crate_name = "bitcoincore_rpc"]
+#![crate_name = "peercoin_rpc"]
 #![crate_type = "rlib"]
 
 #[macro_use]
@@ -24,11 +24,11 @@ extern crate serde;
 
 pub extern crate jsonrpc;
 
-pub extern crate bitcoincore_rpc_json;
-pub use crate::json::bitcoin;
-pub use bitcoincore_rpc_json as json;
-use json::bitcoin::consensus::{Decodable, ReadExt};
-use json::bitcoin::hashes::hex::HexIterator;
+pub extern crate peercoin_rpc_json;
+pub use crate::json::peercoin;
+pub use peercoin_rpc_json as json;
+use json::peercoin::consensus::{Decodable, ReadExt};
+use json::peercoin::hashes::hex::HexIterator;
 
 mod client;
 mod error;
@@ -42,7 +42,7 @@ fn deserialize_hex<T: Decodable>(hex: &str) -> Result<T> {
     let mut reader = HexIterator::new(&hex)?;
     let object = Decodable::consensus_decode(&mut reader)?;
     if reader.read_u8().is_ok() {
-        Err(Error::BitcoinSerialization(bitcoin::consensus::encode::Error::ParseFailed(
+        Err(Error::BitcoinSerialization(peercoin::consensus::encode::Error::ParseFailed(
             "data not consumed entirely when explicitly deserializing",
         )))
     } else {

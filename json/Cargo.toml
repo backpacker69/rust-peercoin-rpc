@@ -1,5 +1,5 @@
 [package]
-name = "ord-bitcoincore-rpc-json"
+name = "peercoin-rpc-json"
 version = "0.17.1"
 authors = [
     "Steven Roose <steven@stevenroose.org>",
@@ -7,20 +7,20 @@ authors = [
     "Dawid Ciężarkiewicz <dpc@dpc.pw>"
 ]
 license = "CC0-1.0"
-homepage = "https://github.com/rust-bitcoin/rust-bitcoincore-rpc/"
-repository = "https://github.com/rust-bitcoin/rust-bitcoincore-rpc/"
-description = "JSON-enabled type structs for bitcoincore-rpc crate."
-keywords = [ "crypto", "bitcoin", "bitcoin-core", "rpc" ]
+homepage = "https://github.com/backpacker69/rust-peercoin-rpc/"
+repository = "https://github.com/backpacker69/rust-peercoin-rpc/"
+description = "JSON-enabled type structs for peercoin-rpc crate."
+keywords = [ "crypto", "peercoin", "rpc" ]
 readme = "README.md"
 edition = "2018"
 
 [lib]
-name = "bitcoincore_rpc_json"
+name = "peercoin_rpc_json"
 path = "src/lib.rs"
 
 [dependencies]
 serde = { version = "1", features = [ "derive" ] }
 serde_json = "1"
 
-bitcoin = { version = "0.30.0", features = ["serde", "rand-std"]}
+peercoin = { version = "0.30.0", features = ["serde", "rand-std"]}
 bitcoin-private = "0.1.0"

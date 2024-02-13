@@ -1,5 +1,5 @@
 [package]
-name = "ord-bitcoincore-rpc"
+name = "peercoin-rpc"
 version = "0.17.1"
 authors = [
     "Steven Roose <steven@stevenroose.org>",
@@ -7,19 +7,19 @@ authors = [
     "Dawid Ciężarkiewicz <dpc@dpc.pw>",
 ]
 license = "CC0-1.0"
-homepage = "https://github.com/rust-bitcoin/rust-bitcoincore-rpc/"
-repository = "https://github.com/rust-bitcoin/rust-bitcoincore-rpc/"
-description = "RPC client library for the Bitcoin Core JSON-RPC API."
-keywords = ["crypto", "bitcoin", "bitcoin-core", "rpc"]
+homepage = "https://github.com/backpacker69/rust-peercoin-rpc/"
+repository = "https://github.com/backpacker69/rust-peercoin-rpc/"
+description = "RPC client library for the Peercoin JSON-RPC API."
+keywords = ["crypto", "peercoin", "rpc"]
 readme = "README.md"
 edition = "2018"
 
 [lib]
-name = "bitcoincore_rpc"
+name = "peercoin_rpc"
 path = "src/lib.rs"
 
 [dependencies]
-ord-bitcoincore-rpc-json = { version = "0.17.1", path = "../json" }
+peercoin-rpc-json = { version = "0.17.1", path = "../json" }
 
 log = "0.4.5"
 jsonrpc = "0.14.0"
