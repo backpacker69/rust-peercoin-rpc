@@ -710,7 +710,7 @@ pub struct WalletTxInfo {
     pub time: u64,
     pub timereceived: u64,
     #[serde(rename = "bip125-replaceable")]
-    pub bip125_replaceable: Bip125Replaceable,
+    pub bip125_replaceable: Option<Bip125Replaceable>,
     /// Conflicting transaction ids
     #[serde(rename = "walletconflicts")]
     pub wallet_conflicts: Vec<peercoin::Txid>,
@@ -1140,7 +1140,7 @@ pub struct GetMempoolEntryResult {
     pub spent_by: Vec<peercoin::Txid>,
     /// Whether this transaction could be replaced due to BIP125 (replace-by-fee)
     #[serde(rename = "bip125-replaceable")]
-    pub bip125_replaceable: bool,
+    pub bip125_replaceable: Option<bool>,
     /// Whether this transaction is currently unbroadcast (initial broadcast not yet acknowledged by any peers)
     /// Added in Bitcoin Core v0.21
     pub unbroadcast: Option<bool>,
