@@ -230,6 +230,7 @@ pub struct GetBlockResult {
     pub nonce: u32,
     pub bits: String,
     pub difficulty: f64,
+    pub mint: f64,
     #[serde(with = "crate::serde_hex")]
     pub chainwork: Vec<u8>,
     pub n_tx: usize,
