@@ -1051,7 +1051,7 @@ pub struct GetBlockchainInfoResult {
     /// The estimated size of the block and undo files on disk
     pub size_on_disk: u64,
     /// If the blocks are subject to pruning
-    pub pruned: bool,
+    pub pruned: Option<bool>,
     /// Lowest-height complete block stored (only present if pruning is enabled)
     #[serde(rename = "pruneheight")]
     pub prune_height: Option<u64>,
